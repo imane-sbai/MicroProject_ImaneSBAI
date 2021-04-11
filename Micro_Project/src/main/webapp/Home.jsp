@@ -1,4 +1,4 @@
- <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+  <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
   <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="language" value="${not empty param.language ? param.language :not empty language ? language : pageContext.request.locale  }" scope="session" />
 <fmt:setLocale value="${language}" />
@@ -37,32 +37,20 @@
                         <h2 class="form-title"><fmt:message key="home" /> </h2>
                         <h4 class="signup-image-link"><i class="zmdi zmdi-flag" style="margin-right:12px; "></i><fmt:message key="lang" /></h4>
 								<div align="center">
-								<form method="post" action="#">
-								
-										<select name="language"  style="width:100px;  -webkit-appearance: none;
-   
-    border: 1px solid #E8EAED;
-    border-radius: 3px;
-    background: white;
-    box-shadow: 0 1px 3px -2px #9098A9;
-    cursor: pointer;
-    font-family: inherit;
-    font-size: 16px;
-    transition: all 150ms ease;">
-											<option value="fr_FR" >French</option>
-											<option value="en_US" >English</option>
-										</select>
-										<input type="submit" value="<fmt:message key="s" />"  style=" margin-top:6px ; width:100px;  border-radius: 5px;  background: #6dabe4;
-  color: #fff;" />
- 
+								<form >
+						  <a href="Home.jsp?language=fr"><img src="images/Flag_of_France.png"  style="weight:30px; height:25px; margin-right:10px;" /></a>
+							<a href="Home.jsp?language=en"><img src="images/usflag.png" style="weight:30px; height:25px;" /></a>
+						
 									</form>
 									 </div>
+									 
                         <form method="POST" class="register-form" id="login-form" action="IdentifierCont" >
                             <div class="form-group">
                                 <a href="SignUp.jsp" class="signup-image-link"><fmt:message key="insc" /></a>
                               <a href="SignIn.jsp" class="signup-image-link"><fmt:message key="ident" /></a>
                             </div>
                           </form>
+                          
                         <div class="social-login" style="margin-left:50px;">
                             <span class="social-label"><fmt:message key="soci" /></span>
                             <ul class="socials">
